@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  Rock Paper Scissors
+</mat-toolbar>
+
+<div class="content">
+  <!-- You -->
+  <mat-card>
+    <mat-card-content>
+      <div class="content1">
+        <h2> You</h2>
+        <button mat-fab color="primary" class="score">
+          0
+        </button>
+      </div>
+
+      <h3> Choose your weapon: </h3>
+      <div class="content2">
+        <i class="fa fa-hand-rock-o" (click)="chooseHand()">r</i>
+        <i class="fa fa-hand-paper-o" (click)="chooseHand()">p</i>
+        <i class="fa fa-hand-scissors-o" (click)="chooseHand()">s</i>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!-- Player 2 -->
+  <mat-card>
+    <div class="content1">
+      <h2> Player 2</h2>
+      <button mat-fab color="accent" class="score">0</button>
+
+    </div>
+    <br><br>
+
+    <div class="flex-container flex-center">
+      <i class="fa fa-hand-rock-o">r</i>
+      <i class="fa fa-hand-paper-o">p</i>
+      <i class="fa fa-hand-scissors-o">s</i>
+    </div>
+  </mat-card>
+</div>
