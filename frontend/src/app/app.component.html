@@ -1,1 +1,6 @@
-<app-game></app-game>
+<div *ngIf="notification && showNotification"
+    (click)="showNotification = !showNotification"
+    class="notification">
+  <p>{{ notification }}</p>
+</div>
+<router-outlet></router-outlet>

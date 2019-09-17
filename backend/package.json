@@ -12,8 +12,6 @@
     "build-frontend": "cd ../frontend && npm run build",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "build-sass": "node-sass src/public/css/main.scss dist/public/css/main.css",
-    "watch-sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "jest": {

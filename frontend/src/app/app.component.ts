@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NotificationService } from 'src/services/notification.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'rock-paper-scissors';
+  title = 'frontend';
+  notification: string;
+  showNotification: boolean;
+
+  constructor(
+    private notificationService: NotificationService,
+  ) {}
+
+  ngOnInit() {
+    this.notificationService
+            .notification$
+            .subscribe(message => { 
+              this.notification = message;
+              this.showNotification = true;
+            });
+  }
 }

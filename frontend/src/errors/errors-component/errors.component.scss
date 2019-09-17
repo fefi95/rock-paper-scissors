@@ -1,0 +1,29 @@
+@import "../../styles.scss";
+
+h1,
+h3,
+h4,
+h5 {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.error-container {
+  padding: 20vh 0;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+
+  &__cta {
+    font-size: 1.5rem;
+  }
+
+  &__404 {
+    font-size: 20rem;
+    font-weight: bolder;
+  }
+
+  &__info {
+    font-size: 16px;
+  }
+}
