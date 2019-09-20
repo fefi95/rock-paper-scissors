@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/services/api.service';
+import { ApiService, Hand, GameOver } from 'src/services/api.service';
 
 @Component({
   selector: 'app-game',
@@ -8,22 +8,32 @@ import { ApiService } from 'src/services/api.service';
 })
 export class GameComponent implements OnInit {
 
-  private botPlay;
-  private gameOver;
+  botPlay: Hand;
+  playerSelected: string;
+  gameOver: GameOver;
+  playerScore = 0;
+  botScore = 0;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
 
-  chooseHand(play) {
-    // throw("soy un error");
-   
+  chooseHand(play: string) {
+    // throw('Unexpected error!!!');
+    this.playerSelected = play;
     this.apiService.playBot().subscribe(bot => {
-      this.botPlay = bot;
-      this.apiService.chooseHand(this.botPlay, play).subscribe(response => {
-        this.gameOver = response;
-      })
+      this.botPlay = bot.result;
+      this.apiService.play(this.botPlay, Hand[play]).subscribe(response => {
+        this.gameOver = response.result;
+
+        if (this.gameOver !== GameOver.loser) {
+          this.playerScore = 1 + this.playerScore;
+        }
+        if (this.gameOver !== GameOver.winner) {
+          this.botScore = this.botScore + 1;
+        }
+      });
     });
   }
 

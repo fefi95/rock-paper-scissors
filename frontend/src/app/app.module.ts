@@ -19,9 +19,9 @@ import { NotificationService } from 'src/services/notification.service';
     GameComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
     MatButtonModule,
     MatCardModule,

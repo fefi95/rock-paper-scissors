@@ -15,8 +15,14 @@ export enum GameOver {
   loser = "Loser",
 }
 
+export const handStringToEnum: { [elem: string]: Hand; } = {
+  paper: Hand.paper,
+  rock: Hand.rock,
+  scissors: Hand.scissors,
+};
+
 export function getGameOver(player: Hand, bot: Hand): GameOver {
-  if (bot === player ) {
+  if (bot === player) {
     return GameOver.tie;
   }
   return (player - bot + 3) % 3 === 1 ? GameOver.winner : GameOver.loser;

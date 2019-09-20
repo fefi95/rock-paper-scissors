@@ -7,31 +7,29 @@
     <mat-card-content>
       <div class="content1">
         <h2>You</h2>
-        <button mat-fab color="primary" class="score">
-          0
-        </button>
+        <button mat-fab color="primary" class="score">{{ playerScore }}</button>
       </div>
 
       <h3> Choose your weapon: </h3>
       <div class="content2">
-        <i class="fa fa-hand-rock-o" (click)="chooseHand('rock')">r</i>
-        <i class="fa fa-hand-paper-o" (click)="chooseHand('paper')">p</i>
-        <i class="fa fa-hand-scissors-o" (click)="chooseHand('scissors')">s</i>
-        <i class="fa fa-hand-scissors-o" (click)="chooseHand('spock')">spock</i>
+        <i class="fa fa-hand-rock-o" [ngClass]="{'selected':(playerSelected === 'rock')}" (click)="chooseHand('rock')"></i>
+        <i class="fa fa-hand-paper-o" [ngClass]="{'selected':(playerSelected === 'paper')}" (click)="chooseHand('paper')"></i>
+        <i class="fa fa-hand-scissors-o" [ngClass]="{'selected':(playerSelected === 'scissors')}" (click)="chooseHand('scissors')"></i>
+        <i class="fa fa-hand-spock-o" (click)="chooseHand('spock')"></i>
       </div>
     </mat-card-content>
   </mat-card>
   <mat-card>
     <div class="content1">
-      <h2> Player 2</h2>
-      <button mat-fab color="accent" class="score">0</button>
+      <h2>Player 2</h2>
+      <button mat-fab color="accent" class="score">{{ botScore }}</button>
     </div>
     <br><br>
 
     <div class="flex-container flex-center">
-      <i class="fa fa-hand-rock-o">r</i>
-      <i class="fa fa-hand-paper-o">p</i>
-      <i class="fa fa-hand-scissors-o">s</i>
+      <i class="fa fa-hand-rock-o selected" [ngClass]="{'hide':(botPlay !== 'rock')}"></i>
+      <i class="fa fa-hand-paper-o selected" [ngClass]="{'hide':(botPlay !== 'paper')}"></i>
+      <i class="fa fa-hand-scissors-o selected" [ngClass]="{'hide':(botPlay !== 'scissors')}"></i>
     </div>
   </mat-card>
 </div>

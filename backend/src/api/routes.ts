@@ -8,7 +8,7 @@ class Api {
     this.init();
   }
   private init() {
-    this.router.get("/pick/:hand", gameOver);
+    this.router.get("/play", gameOver);
     this.router.get("/bot", bot);
   }
 }

@@ -32,7 +32,7 @@ class App {
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: true }));
     this.express.use(expressValidator());
-    this.express.use(express.static(`${__dirname}/dist/frontend`));
+    this.express.use(express.static(`${__dirname}/frontend`));
   }
   /**
    * Primary app routes.
@@ -51,7 +51,7 @@ class App {
      */
     this.express.listen(this.express.get("port"), () => {
       // tslint:disable-next-line:no-console
-      console.log(("  App is running at http://localhost:%d \
+      console.log(("App is running at http://localhost:%d \
       in %s mode"), this.express.get("port"), this.express.get("env"));
       // tslint:disable-next-line:no-console
       console.log("  Press CTRL-C to stop\n");

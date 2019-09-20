@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-prod": "npx ng build --output-path ../backend/dist/frontend --deploy-url=${APP_BASE_URL} --base-href=${APP_BASE_URL:=/} --prod --progress",
+    "build-watch": "npx ng build --watch --output-path ../backend/dist/frontend --base-href=${APP_BASE_URL:=/}"
+
   },
   "private": true,
   "dependencies": {

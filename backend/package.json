@@ -9,7 +9,8 @@
     "serve": "node dist/server.js",
     "watch": "nodemon dist/server.js",
     "test": "jest --forceExit --coverage",
-    "build-frontend": "cd ../frontend && npm run build",
+    "build-frontend": "cd ../frontend && npm run build-prod",
+    "build-frontend-watch": "cd ../frontend && npm run build-watch",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
